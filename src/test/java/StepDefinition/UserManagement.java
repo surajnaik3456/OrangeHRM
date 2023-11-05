@@ -81,7 +81,4 @@ public class UserManagement extends TestBase{
     {
     	homepg.totalRecordsDisplayed();
     }
-   
-	
-
 }

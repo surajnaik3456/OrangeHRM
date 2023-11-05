@@ -23,6 +23,8 @@ public class HomePage extends TestBase {
 	By clickSearch = By.cssSelector("button[type='submit']");
 	By userDisplayed = By.xpath("(//span[@class='oxd-text oxd-text--span'])[1]");
 	By resetBtn = By.xpath("(//button[@type='button'])[4]");
+	By searchField = By.xpath("(//input[@class='oxd-input oxd-input--active'])[1]");
+	By sidePanel = By.cssSelector("div[class='oxd-sidepanel-body']");
 	
 	public HomePage(WebDriver driver)
 	{
@@ -89,5 +91,26 @@ public class HomePage extends TestBase {
 	public void resetClick()
 	{
 	driver.findElement(resetBtn).click();	
+	}
+	public void searchFieldClick(String category)
+	{
+	driver.findElement(searchField).sendKeys(category);	
+	}
+	public void sidePanel()
+	{
+	driver.findElement(sidePanel).isDisplayed();
+	}
+	public void searchCategoryResult(String category)
+	{
+		List<WebElement> options2 = driver.findElements(By.xpath("//ul[@class='oxd-main-menu']"));
+		for(WebElement option:options2)
+		{
+			if(option.getText().equalsIgnoreCase(category))
+			{
+				option.click();
+				break;
+			}
+		}
+		System.out.println(" Landed on " +category+" screen ");
 	}
 }

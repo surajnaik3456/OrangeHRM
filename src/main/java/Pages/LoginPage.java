@@ -23,7 +23,6 @@ public class LoginPage extends TestBase {
 	{
 		this.driver=driver;
 	}
-	
 	public void verifyLoginPage()
 	{
 		driver.findElement(logo).isDisplayed();
@@ -72,6 +71,8 @@ public class LoginPage extends TestBase {
 	{
 		driver.findElement(userNameField).sendKeys("Admin");
 		driver.findElement(passwordField).sendKeys("admin123");
-		driver.findElement(loginClick).click();	
+		driver.findElement(loginClick).click();
+		
 	}
+	
 }
