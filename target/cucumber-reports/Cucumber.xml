@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="159.075" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="feature to test the user management" name="Verify search and reset functionality for user management in admin - Example #1.1" time="158.873">
+<system-out><![CDATA[
+Given the user is on homepage...............................................passed
+And clicks on Admin in sidepanel............................................passed
+Then User Management section is displayed...................................passed
+And the user makes a note of the total number of records for the users......passed
+When user search with search parameters for Admin, Admin, Paul M Collings and Enabled.passed
+And clicks on Search button.................................................passed
+Then the searched user is displayed with the (1) Record Found...............passed
+When the user clicks on Reset button........................................passed
+Then the search parameters values should be cleared.........................passed
+And All the records should be displayed.....................................passed
+]]></system-out>
+</testcase>
+</testsuite>

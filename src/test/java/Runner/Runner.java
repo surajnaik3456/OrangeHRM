@@ -8,10 +8,15 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/Feature", 
                  glue = { "StepDefinition","Hooks" },
-                 tags = "@SearchFunctionality", 
+                 tags = "@Usermanagement", 
                  monochrome = true, 
-                 plugin = { "pretty", "html:target/cucumber-reports/cucumber.html",
-				            "json:target/cucumber-reports/cucumber.json" })
+                 dryRun = false,
+                 plugin = {
+                	                "pretty",
+                	                "html:target/cucumber-reports/cucumber.html",
+                	                "json:target/cucumber-reports/cucumber.json",
+                	                "junit:target/cucumber-reports/Cucumber.xml"
+                	      })
 
 public class Runner {
 

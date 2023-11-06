@@ -1,0 +1,5 @@
+Hooks\Hooks.class
+StepDefinition\SearchInSidePanel.class
+Runner\Runner.class
+StepDefinition\UserManagement.class
+StepDefinition\Login.class
