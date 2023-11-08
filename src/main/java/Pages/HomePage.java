@@ -1,16 +1,20 @@
 package Pages;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import TestBase.TestBase;
 
 public class HomePage extends TestBase {
 
 	WebDriver driver;
+	WebDriverWait wait =new WebDriverWait(driver,Duration.ofSeconds(5));
 	By homePage = By.xpath("//h6");
 	By userDropdown = By.xpath("//p[@class='oxd-userdropdown-name']");
 	By logout = By.linkText("Logout");
@@ -25,6 +29,18 @@ public class HomePage extends TestBase {
 	By resetBtn = By.xpath("(//button[@type='button'])[4]");
 	By searchField = By.xpath("(//input[@class='oxd-input oxd-input--active'])[1]");
 	By sidePanel = By.cssSelector("div[class='oxd-sidepanel-body']");
+	//Dropdown locators
+	By aboutSelect = By.xpath("//*[text()='About']");
+	By supportSelect = By.xpath("//*[text()='Support']");
+	By changePasswordSelect = By.xpath("//*[text()='Change Password']");
+	By AboutDailogueBox = By.cssSelector("h6[class='oxd-text oxd-text--h6 orangehrm-main-title']");
+	By supportScreen =By.cssSelector("div[class='orangehrm-support']");
+	By changePasswordScreen = By.xpath("//*[text()='Update Password']");
+	By currentPassword =By.xpath("(//input[@class='oxd-input oxd-input--active'])[2]");
+	By pwd =By.xpath("(//input[@class='oxd-input oxd-input--active'])[3]");
+	By confirmPassword =By.xpath("(//input[@class='oxd-input oxd-input--active'])[4]");
+	By save =By.cssSelector("button[type='submit']");
+	By success =By.xpath("//*[text()='Success']");
 	
 	public HomePage(WebDriver driver)
 	{
@@ -112,5 +128,51 @@ public class HomePage extends TestBase {
 			}
 		}
 		System.out.println(" Landed on " +category+" screen ");
+	}
+	//Dropdown methods
+	public void selectAbout()
+	{
+		driver.findElement(aboutSelect).click();
+	}
+	public void selectSupport()
+	{
+		driver.findElement(supportSelect).click();
+	}
+	public void passwordChangeClick()
+	{
+		driver.findElement(changePasswordSelect).click();
+	}
+	public void AboutDailogueBoxVisible()
+	{
+		driver.findElement(AboutDailogueBox).isDisplayed();
+	}
+	public void supportScreenShowsUp()
+	{
+		driver.findElement(supportScreen).isDisplayed();
+	}
+	public void changePasswordScreenVisible()
+	{
+		driver.findElement(changePasswordScreen).isDisplayed();
+	}
+	public void EnterCurrentPassword(String currentpassword)
+	{
+		driver.findElement(currentPassword).sendKeys(currentpassword);
+	}
+	public void enterPassword(String password)
+	{
+		driver.findElement(pwd).sendKeys(password);
+	}
+	public void enterConfirmPassword(String confirmpassword)
+	{
+		driver.findElement(pwd).sendKeys(confirmpassword);
+	}
+	public void clickSave()
+	{
+		driver.findElement(save).click();
+	}
+	public void successMessage()
+	{
+		wait.until(ExpectedConditions.visibilityOfElementLocated(success));
+		driver.findElement(success).isDisplayed();
 	}
 }

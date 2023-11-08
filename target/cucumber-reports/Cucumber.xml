@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="159.075" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="feature to test the user management" name="Verify search and reset functionality for user management in admin - Example #1.1" time="158.873">
+<testsuite name="Cucumber" time="22.603" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Testing the Profile Dropdown Module" name="Changing Password - Example #1.1" time="22.391">
 <system-out><![CDATA[
 Given the user is on homepage...............................................passed
-And clicks on Admin in sidepanel............................................passed
-Then User Management section is displayed...................................passed
-And the user makes a note of the total number of records for the users......passed
-When user search with search parameters for Admin, Admin, Paul M Collings and Enabled.passed
-And clicks on Search button.................................................passed
-Then the searched user is displayed with the (1) Record Found...............passed
-When the user clicks on Reset button........................................passed
-Then the search parameters values should be cleared.........................passed
-And All the records should be displayed.....................................passed
+When the user clicks on profile dropdown....................................passed
+And the user selects Change Password........................................passed
+Then change password screen is displayed....................................passed
+And the user enter admin123, admin12345 and admin12345......................passed
+And clicks on save botton...................................................passed
+Then Success flash message is displayed.....................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

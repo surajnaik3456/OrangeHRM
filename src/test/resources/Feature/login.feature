@@ -35,7 +35,7 @@
       | Admin    | Abcd     |
 
   @Fourth
-  Scenario Outline: Login with empty username and password fields
+  Scenario: Login with empty username and password fields
     Given user is on login page
     When the user leaves both username and password fields empty
     And click on Login button
@@ -52,7 +52,7 @@
   
   
   @sixth
-  Scenario Outline: Logout functionality
+  Scenario: Logout functionality
     Given the user is logged in
     When the user clicks on profile dropdown
     And clicks the logout

@@ -61,6 +61,11 @@
             <artifactId>cucumber-gherkin</artifactId>
             <version>7.14.0</version>
         </dependency>
+        <dependency>
+        	<groupId>Assignment27</groupId>
+        	<artifactId>Assignment27</artifactId>
+        	<version>0.0.1-SNAPSHOT</version>
+        </dependency>
   </dependencies>
     <build>
         <plugins>
