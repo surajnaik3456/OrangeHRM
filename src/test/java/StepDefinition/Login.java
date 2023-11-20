@@ -16,7 +16,7 @@ import io.cucumber.java.en.When;
 
 public class Login extends TestBase {
 
-	LoginPage loginpg = new LoginPage(driver); ;
+	LoginPage loginpg = new LoginPage(driver);
 	HomePage homepg = new HomePage(driver);
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
