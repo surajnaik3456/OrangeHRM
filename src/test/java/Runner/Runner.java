@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/Feature", 
                  glue = { "StepDefinition","Hooks" },
-                 tags = "@profiledropdown", 
+                 tags = "@Smoke", 
                  monochrome = true, 
                  dryRun = false,
                  plugin = {
