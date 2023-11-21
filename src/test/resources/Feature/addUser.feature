@@ -1,7 +1,7 @@
 @AddUser
 Feature: Test Add User fuctionality in User management
 
-  @tag1
+  @CheckAddUser
   Scenario Outline: Verify Add user functionality
     Given the user is on homepage
     And clicks on Admin in sidepanel

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="75.545" tests="6" skipped="0" failures="6" errors="0">
-<testcase classname="Test the login functionality of OrangeHRM" name="Test the valid login - Example #1.1" time="21.044">
+<testsuite name="Cucumber" time="113.008" tests="6" skipped="0" failures="6" errors="0">
+<testcase classname="Test the login functionality of OrangeHRM" name="Test the valid login - Example #1.1" time="16.489">
 <failure type="io.cucumber.core.exception.CucumberException" message="Failed to instantiate class StepDefinition.Login">
 <![CDATA[io.cucumber.core.exception.CucumberException: Failed to instantiate class StepDefinition.Login
 	at io.cucumber.core.backend.DefaultObjectFactory.cacheNewInstance(DefaultObjectFactory.java:67)
@@ -73,7 +73,7 @@ And click on Login button...................................................skip
 Then user should land on homepage...........................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Test the login functionality of OrangeHRM" name="Login with invalid username and valid password - Example #1.1" time="16.136">
+<testcase classname="Test the login functionality of OrangeHRM" name="Login with invalid username and valid password - Example #1.1" time="22.913">
 <failure type="io.cucumber.core.exception.CucumberException" message="Failed to instantiate class StepDefinition.Login">
 <![CDATA[io.cucumber.core.exception.CucumberException: Failed to instantiate class StepDefinition.Login
 	at io.cucumber.core.backend.DefaultObjectFactory.cacheNewInstance(DefaultObjectFactory.java:67)
@@ -146,7 +146,7 @@ And click on Login button...................................................skip
 Then the user should get an error message indicating Invalid Credentials....skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Test the login functionality of OrangeHRM" name="Login with valid username and invalid password - Example #1.1" time="6.564">
+<testcase classname="Test the login functionality of OrangeHRM" name="Login with valid username and invalid password - Example #1.1" time="18.537">
 <failure type="io.cucumber.core.exception.CucumberException" message="Failed to instantiate class StepDefinition.Login">
 <![CDATA[io.cucumber.core.exception.CucumberException: Failed to instantiate class StepDefinition.Login
 	at io.cucumber.core.backend.DefaultObjectFactory.cacheNewInstance(DefaultObjectFactory.java:67)
@@ -219,7 +219,7 @@ And click on Login button...................................................skip
 Then the user should get an error message indicating Invalid Credentials....skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Test the login functionality of OrangeHRM" name="Login with empty username and password fields" time="6.343">
+<testcase classname="Test the login functionality of OrangeHRM" name="Login with empty username and password fields" time="19.867">
 <failure type="io.cucumber.core.exception.CucumberException" message="Failed to instantiate class StepDefinition.Login">
 <![CDATA[io.cucumber.core.exception.CucumberException: Failed to instantiate class StepDefinition.Login
 	at io.cucumber.core.backend.DefaultObjectFactory.cacheNewInstance(DefaultObjectFactory.java:67)
@@ -292,7 +292,7 @@ And click on Login button...................................................skip
 Then the user should get an error message indicating required fields........skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Test the login functionality of OrangeHRM" name="Forgot password flow" time="12.31">
+<testcase classname="Test the login functionality of OrangeHRM" name="Forgot password flow" time="19.363">
 <failure type="io.cucumber.core.exception.CucumberException" message="Failed to instantiate class StepDefinition.Login">
 <![CDATA[io.cucumber.core.exception.CucumberException: Failed to instantiate class StepDefinition.Login
 	at io.cucumber.core.backend.DefaultObjectFactory.cacheNewInstance(DefaultObjectFactory.java:67)
@@ -367,7 +367,7 @@ And click on Reset password button..........................................skip
 Then reset password link is sent via email..................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Test the login functionality of OrangeHRM" name="Logout functionality" time="12.87">
+<testcase classname="Test the login functionality of OrangeHRM" name="Logout functionality" time="15.576">
 <failure type="io.cucumber.core.exception.CucumberException" message="Failed to instantiate class StepDefinition.Login">
 <![CDATA[io.cucumber.core.exception.CucumberException: Failed to instantiate class StepDefinition.Login
 	at io.cucumber.core.backend.DefaultObjectFactory.cacheNewInstance(DefaultObjectFactory.java:67)

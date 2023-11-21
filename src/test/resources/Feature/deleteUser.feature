@@ -1,7 +1,7 @@
 @DeleteUser
 Feature: Test Delete User fuctionality in User management
 
-  @tag1
+  @CheckDeleteUser
   Scenario Outline: Verify delete user functionality
     Given the user is on homepage
     And clicks on Admin in sidepanel
