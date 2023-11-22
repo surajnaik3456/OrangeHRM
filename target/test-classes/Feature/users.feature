@@ -3,7 +3,7 @@ Feature: feature to test the user management
 
   Scenario Outline: Verify search and reset functionality for user management in admin
     Given the user is on homepage
-    And clicks on Admin in sidepanel
+    And clicks on "Admin" in sidepanel
     Then User Management section is displayed
     And the user makes a note of the total number of records for the users
     When user search with search parameters for <username>, <user_role>, <employee_name> and <status>

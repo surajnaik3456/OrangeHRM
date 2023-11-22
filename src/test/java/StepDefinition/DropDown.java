@@ -6,7 +6,7 @@ import io.cucumber.java.en.*;
 
 public class DropDown extends TestBase 
 {
-	HomePage homepg = new HomePage(driver);
+	HomePage homepg = new HomePage();
 	
 	@And ("the user selects About")
 	public void selectAbout() 

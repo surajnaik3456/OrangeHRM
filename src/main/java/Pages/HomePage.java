@@ -4,7 +4,6 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,7 +12,6 @@ import TestBase.TestBase;
 
 public class HomePage extends TestBase {
 
-	WebDriver driver;
 	WebDriverWait wait =new WebDriverWait(driver,Duration.ofSeconds(5));
 	By homePage = By.xpath("//h6");
 	By userDropdown = By.xpath("//p[@class='oxd-userdropdown-name']");
@@ -42,10 +40,6 @@ public class HomePage extends TestBase {
 	By save =By.cssSelector("button[type='submit']");
 	By success =By.xpath("//*[text()='Success']");
 	
-	public HomePage(WebDriver driver)
-	{
-		this.driver=driver;
-	}
 	public void homePageVerify()
 	{
 		driver.findElement(homePage).isDisplayed();
@@ -174,5 +168,13 @@ public class HomePage extends TestBase {
 	{
 		wait.until(ExpectedConditions.visibilityOfElementLocated(success));
 		driver.findElement(success).isDisplayed();
+	}
+	public void clickOption(String option) {
+		// TODO Auto-generated method stub
+		driver.findElement(By.xpath("//li/a/span[text()='"+option+"']/parent::a")).click();
+	}
+	public void clickDltForParticularUser(String user)
+	{
+		driver.findElement(By.xpath("//div[text()='"+user+"']/parent::div/following-sibling::div[4]//button[@class='oxd-icon-button oxd-table-cell-action-space'][1]")).click();
 	}
 }

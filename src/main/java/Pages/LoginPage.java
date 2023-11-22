@@ -1,12 +1,11 @@
 package Pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 import TestBase.TestBase;
 
 public class LoginPage extends TestBase {
-	WebDriver driver;
+	
 	By logo = By.xpath("//div[@class='orangehrm-login-logo']/img[1]");
 	By userNameField = By.name("username");
 	By passwordField = By.name("password");
@@ -19,10 +18,6 @@ public class LoginPage extends TestBase {
 	By clickReset = By.xpath("//button[text()=' Reset Password ']");
 	By confirmation = By.xpath("//*[text()='Reset Password link sent successfully']");
 	
-	public LoginPage(WebDriver driver)
-	{
-		this.driver=driver;
-	}
 	public void verifyLoginPage()
 	{
 		driver.findElement(logo).isDisplayed();

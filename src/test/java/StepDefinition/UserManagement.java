@@ -15,8 +15,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.*;
 
 public class UserManagement extends TestBase{
-	LoginPage loginpg = new LoginPage(driver);
-	HomePage homepg = new HomePage(driver);
+	LoginPage loginpg = new LoginPage();
+	HomePage homepg = new HomePage();
 	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
 	
 	@Given ("the user is on homepage")
@@ -26,11 +26,12 @@ public class UserManagement extends TestBase{
 		loginpg.userLoggedIn();
 		homepg.homePageVerify();
 	}
-	@And ("clicks on Admin in sidepanel")
-    public void clickAdmin() throws InterruptedException
+	@And ("clicks on {string} in sidepanel")
+    public void clickAdmin(String option) throws InterruptedException
 	{
 		Thread.sleep(2000);
-		homepg.adminClick();
+//		homepg.adminClick();
+		homepg.clickOption(option);
 	}
 	@Then ("User Management section is displayed")
 	public void adminSection()

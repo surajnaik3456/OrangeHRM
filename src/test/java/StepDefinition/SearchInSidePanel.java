@@ -10,8 +10,8 @@ import TestBase.TestBase;
 import io.cucumber.java.en.*;
 
 public class SearchInSidePanel extends TestBase {
-	LoginPage loginpg = new LoginPage(driver);
-	HomePage homepg = new HomePage(driver);
+	LoginPage loginpg = new LoginPage();
+	HomePage homepg = new HomePage();
 	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
 	
 	@And ("the side panel is visible")
