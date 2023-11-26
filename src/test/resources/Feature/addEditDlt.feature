@@ -1,4 +1,4 @@
-@AddUser
+@AddEditDltUser
 Feature: Test Add User fuctionality in User management
 
   @CheckAddUser
@@ -6,38 +6,37 @@ Feature: Test Add User fuctionality in User management
     Given the user is on homepage
     And clicks on "Admin" in sidepanel
     Then User Management section is displayed
-    When user clicks on add button
+    When Admin clicks on add button
     Then Add user form is displayed
     When user saves with parameters for <user_role>, <status>, <password>, <employee_name>, <user_name> and <confirm_password>
-    And Clicks on save button
-    Then user <user_name> gets added to the list
-    And success message is displayed
+    And Clicks on save button in add user page
+    Then success message is displayed
+    And user with <user_name> gets added to the list
 
     Examples: 
-      | user_role | status  | password | employee_name  | user_name | confirm_password |
-      | Admin     | Enabled | Admin123 | Paul  Collings | Pauli     | Admin123         |
-      
-     @CheckEditUser
+      | user_role | status  | password | employee_name   | user_name | confirm_password |
+      | Admin     | Enabled | Admin123 | Charlie  Carter | Tester189 | Admin123         |
+
+  @CheckEditUser
   Scenario Outline: Verify edit user functionality
     Given the user is on homepage
-    And clicks on Admin in sidepanel
-    Then user Management section is displayed
-    When user clicks on edit icon for the "Aaliyah.Haq"
+    And clicks on "Admin" in sidepanel
+    Then User Management section is displayed
+    When Admin clicks on edit icon for the <username>
     Then edit user form is displayed
-    When user updates the user role from Admin to ESS<role>
+    When user updates the user name to <updatedname>
     And clicks on save button
     Then success messages should be displayed
     And redirected to user management screen
 
     Examples: 
-      | username    | role  |
-      | Admin       | ESS   |
-      | arica.ratke | Admin |
-     
-      @CheckDeleteUser
+      | user       | updatedname |
+      | Tester189 | tester11    |
+
+  @CheckDeleteUser
   Scenario Outline: Verify delete user functionality
     Given the user is on homepage
-    And clicks on Admin in sidepanel
+    And clicks on "Admin" in sidepanel
     Then User Management section is displayed
     When user clicks on delete icon for the <username>
     Then confirmation pop-up shows up

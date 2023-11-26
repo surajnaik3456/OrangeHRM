@@ -18,7 +18,6 @@ public class UserManagement extends TestBase{
 	LoginPage loginpg = new LoginPage();
 	HomePage homepg = new HomePage();
 	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
-	
 	@Given ("the user is on homepage")
 	public void userOnHomepage()
 	{
@@ -30,7 +29,6 @@ public class UserManagement extends TestBase{
     public void clickAdmin(String option) throws InterruptedException
 	{
 		Thread.sleep(2000);
-//		homepg.adminClick();
 		homepg.clickOption(option);
 	}
 	@Then ("User Management section is displayed")

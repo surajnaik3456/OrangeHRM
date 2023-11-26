@@ -1,7 +1,7 @@
 @AddJobTitle
 Feature: Test adding job title fuctionality in User management
 
-  @CheckEditUser
+  @CheckEditJobTitle
   Scenario Outline: Verify adding job title fuctionality
     Given the user is on homepage
     And clicks on Admin in sidepanel
