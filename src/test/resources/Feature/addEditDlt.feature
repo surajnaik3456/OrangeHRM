@@ -24,14 +24,15 @@ Feature: Test Add User fuctionality in User management
     Then User Management section is displayed
     When Admin clicks on edit icon for the <username>
     Then edit user form is displayed
-    When user updates the user name to <updatedname>
+    When Admin updates the <usernameupdate>, <userrole> and <status>
     And clicks on save button
     Then success messages should be displayed
-    And redirected to user management screen
+    And redirected to <usermanagementscreen>
+    And check if <userrole>, <status> for the <username> is updated
 
     Examples: 
-      | user       | updatedname |
-      | Tester189 | tester11    |
+      | username | usernameupdate | userrole | status  | usermanagementscreen |
+      | ad1234   | tester12       | Admin    | Enabled | System Users         |
 
   @CheckDeleteUser
   Scenario Outline: Verify delete user functionality
@@ -39,10 +40,11 @@ Feature: Test Add User fuctionality in User management
     And clicks on "Admin" in sidepanel
     Then User Management section is displayed
     When user clicks on delete icon for the <username>
-    Then confirmation pop-up shows up
-    And user clicks on Yes,delete button
+    Then confirmation <popup> shows up
+    And user clicks on Yes button
     Then Success message is displayed
+    And user with <username> gets delete and is not in the table
 
     Examples: 
-      | username |
-      | Pauli    |
+      | username     | popup         |
+      | hero23 | Are you Sure? |

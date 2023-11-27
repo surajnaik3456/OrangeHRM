@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import TestBase.TestBase;
 
+
 public class UserManagementPage extends TestBase {
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 	By addBtn = By.cssSelector("button[class='oxd-button oxd-button--medium oxd-button--secondary']");
@@ -23,9 +24,14 @@ public class UserManagementPage extends TestBase {
 	By successMssg = By.xpath("//*[text()='Success']");
 	// EditUser
 	By editUserPage = By.cssSelector("h6[class='oxd-text oxd-text--h6 orangehrm-main-title']");
+	By userRoleEdit = By.xpath("(//div[@class='oxd-select-text-input'])[1]");
+	By statusDropdownEdit = By.xpath("(//div[@class='oxd-select-text-input'])[2]");
 	By userNameEdit = By.xpath("(//input[@class='oxd-input oxd-input--active'])[2]");
 	By saveEdit = By.cssSelector("button[type='submit']");
-
+	// DeleteUser
+	By yesBtn = By.xpath("//button[text()=' Yes, Delete ']");
+	By noBtn = By.xpath("//button[text()=' No, Cancel ']");
+	
 	public void clickAddBtn() {
 		driver.findElement(addBtn).click();
 	}
@@ -75,19 +81,34 @@ public class UserManagementPage extends TestBase {
 		driver.findElement(editUserPage).isDisplayed();
 	}
 
-	public void editUserName(String updatedname) {
-
+	public void editUserName(String usernameupdate) {
 		driver.findElement(userNameEdit).clear();
-		driver.findElement(userNameEdit).click();
-		driver.findElement(userNameEdit).sendKeys(updatedname);
+		driver.findElement(userNameEdit).sendKeys(usernameupdate);
+	}
+	public void userRoleUpdate(String userrole) {
+		driver.findElement(userRoleEdit).click();
+		driver.findElement(By.xpath("//span[text()='"+userrole+"']/parent::div")).click();
+	}
+	public void updateStatus(String status) {
+		driver.findElement(statusDropdownEdit).click();
+		driver.findElement(By.xpath("//span[text()='"+status+"']/parent::div")).click();
 	}
 
 	public void ClickSaveEdit() {
 		wait.until(ExpectedConditions.elementToBeClickable(saveEdit));
 		driver.findElement(saveEdit).click();
 	}
-
-	public void userManagementPg() {
-		driver.findElement(By.xpath("(//span[@class='oxd-text oxd-text--span'])[1]")).isDisplayed();
+	
+	public void clickDltForUsername(String username) {
+		driver.findElement(By.xpath("//div[text()='"+username+"']/parent::div/following-sibling::div[4]//button[@class='oxd-icon-button oxd-table-cell-action-space'][1]")).click();
 	}
+	public void yesInPopUp()
+	{  
+		driver.findElement(yesBtn).click();
+	}
+	public void NoInPopUp()
+	{
+		driver.findElement(noBtn).click();
+	}
+	
 }
