@@ -17,7 +17,7 @@ Feature: Test adding job title fuctionality in User management
     And Check if title <jobTitle> and descrption got added to the table
 
     Examples: 
-      | jobTitle  | jobDescription | note                                                      |
+      | jobTitle          | jobDescription | note                                                      |
       | Automation Tester | .......        | I am a detail-oriented and highly analytical professional |
 
   @CheckEditJobTitle
@@ -28,16 +28,16 @@ Feature: Test adding job title fuctionality in User management
     When Admin clicks on job dropdown
     And selects "Job Titles" in the dropdown
     Then "Job Titles" screen is displayed
-    When Admin clicks on edit icon for job title "Chief Technical Officer"
-    Then "Edit Job Title" form is displayed
-    When Admin updates the <jobTitle>, <jobDescription> and <note>
-    And clicks on save button
+    When Admin clicks on edit icon for job title "Chief Financial Officer"
+    Then "Edit Job Title" form displays
+    When Admin updates <jobTitle>, <jobDescription> and <note>
+    And Clicks on save button
     Then success message is displayed
-    And <updateJobTitle> gets added to the table
+    And <jobTitle> gets added to the table
 
     Examples: 
-      | jobTitle | jobDescription                                                    | note                                |
-      | Tester   | A Software Tester is responsible for ensuring quality of software | I am a detail-oriented professional |
+      | jobTitle          | jobDescription                                                    | note                                |
+      | Financial Officer | A Software Tester is responsible for ensuring quality of software | I am a detail-oriented professional |
 
   @CheckDeleteJobTitle
   Scenario Outline: Verify Deleting job title functionality
@@ -51,8 +51,8 @@ Feature: Test adding job title fuctionality in User management
     Then confirmation <popup> shows up
     And user clicks on Yes button
     Then Success message is displayed
-    And user with <jobTitle> gets deleted and is not in the table
+    And user with <jobTitle> job title gets deleted and is not in the table
 
     Examples: 
       | jobTitle        | popup         |
-      | Software tester | Are you Sure? |
+      | Finance Manager | Are you Sure? |

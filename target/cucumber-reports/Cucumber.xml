@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="25.625" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="Test adding job title fuctionality in User management" name="Verify Editing job title functionality - Example #1.1" time="25.388">
-<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: //h6[text()='Add Job Title'] (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.14.1', revision: '03f8ede370'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50857}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50857/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 1faa186f13a9dadc57dbef585ec50092">
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //h6[text()='Add Job Title'] (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.14.1', revision: '03f8ede370'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50857}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50857/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 1faa186f13a9dadc57dbef585ec50092
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at StepDefinition.JobTitle.job_title_form_is_displayed(JobTitle.java:51)
-	at ✽."Edit Job Title" form is displayed(file:///C:/Users/User/Desktop/OrangeHRM_BDD/src/test/resources/Feature/AddEditDltJobTitle.feature:32)
-]]>
-</failure>
+<testsuite name="Cucumber" time="30.226" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Test adding job title fuctionality in User management" name="Verify Editing job title functionality - Example #1.1" time="29.979">
 <system-out><![CDATA[
 Given the user is on homepage...............................................passed
 And clicks on "Admin" in sidepanel..........................................passed
@@ -26,12 +8,12 @@ Then User Management section is displayed...................................pass
 When Admin clicks on job dropdown...........................................passed
 And selects "Job Titles" in the dropdown....................................passed
 Then "Job Titles" screen is displayed.......................................passed
-When Admin clicks on edit icon for job title "Chief Technical Officer"......passed
-Then "Edit Job Title" form is displayed.....................................failed
-When Admin updates the Tester, A Software Tester is responsible for ensuring quality of software and I am a detail-oriented professional.skipped
-And clicks on save button...................................................skipped
-Then success message is displayed...........................................skipped
-And <updateJobTitle> gets added to the table................................skipped
+When Admin clicks on edit icon for job title "Chief Financial Officer"......passed
+Then "Edit Job Title" form displays.........................................passed
+When Admin updates Financial Officer, A Software Tester is responsible for ensuring quality of software and I am a detail-oriented professional.passed
+And Clicks on save button...................................................passed
+Then success message is displayed...........................................passed
+And Financial Officer gets added to the table...............................passed
 ]]></system-out>
 </testcase>
 </testsuite>
