@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import TestBase.TestBase;
 
-
 public class UserManagementPage extends TestBase {
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 	By addBtn = By.cssSelector("button[class='oxd-button oxd-button--medium oxd-button--secondary']");
@@ -31,7 +30,7 @@ public class UserManagementPage extends TestBase {
 	// DeleteUser
 	By yesBtn = By.xpath("//button[text()=' Yes, Delete ']");
 	By noBtn = By.xpath("//button[text()=' No, Cancel ']");
-	
+
 	public void clickAddBtn() {
 		driver.findElement(addBtn).click();
 	}
@@ -85,30 +84,34 @@ public class UserManagementPage extends TestBase {
 		driver.findElement(userNameEdit).clear();
 		driver.findElement(userNameEdit).sendKeys(usernameupdate);
 	}
+
 	public void userRoleUpdate(String userrole) {
 		driver.findElement(userRoleEdit).click();
-		driver.findElement(By.xpath("//span[text()='"+userrole+"']/parent::div")).click();
+		driver.findElement(By.xpath("//span[text()='" + userrole + "']/parent::div")).click();
 	}
+
 	public void updateStatus(String status) {
 		driver.findElement(statusDropdownEdit).click();
-		driver.findElement(By.xpath("//span[text()='"+status+"']/parent::div")).click();
+		driver.findElement(By.xpath("//span[text()='" + status + "']/parent::div")).click();
 	}
 
 	public void ClickSaveEdit() {
 		wait.until(ExpectedConditions.elementToBeClickable(saveEdit));
 		driver.findElement(saveEdit).click();
 	}
-	
+
 	public void clickDltForUsername(String username) {
-		driver.findElement(By.xpath("//div[text()='"+username+"']/parent::div/following-sibling::div[4]//button[@class='oxd-icon-button oxd-table-cell-action-space'][1]")).click();
+		driver.findElement(By.xpath("//div[text()='" + username
+				+ "']/parent::div/following-sibling::div[4]//button[@class='oxd-icon-button oxd-table-cell-action-space'][1]"))
+				.click();
 	}
-	public void yesInPopUp()
-	{  
+
+	public void yesInPopUp() {
 		driver.findElement(yesBtn).click();
 	}
-	public void NoInPopUp()
-	{
+
+	public void NoInPopUp() {
 		driver.findElement(noBtn).click();
 	}
-	
+
 }

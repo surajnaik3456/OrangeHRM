@@ -14,8 +14,8 @@ Feature: Test Add User fuctionality in User management
     And user with <user_name> gets added to the list
 
     Examples: 
-      | user_role | status  | password | employee_name   | user_name | confirm_password |
-      | Admin     | Enabled | Admin123 | Charlie  Carter | Tester189 | Admin123         |
+      | user_role | status  | password | employee_name             | user_name  | confirm_password |
+      | ESS       | Enabled | Admin123 | AgustinaPMC Grady Sanford | Tester1889 | Admin123         |
 
   @CheckEditUser
   Scenario Outline: Verify edit user functionality
@@ -24,15 +24,15 @@ Feature: Test Add User fuctionality in User management
     Then User Management section is displayed
     When Admin clicks on edit icon for the <username>
     Then edit user form is displayed
-    When Admin updates the <usernameupdate>, <userrole> and <status>
+    When Admin updates the parameters <usernameupdate>, <userrole> and <status>
     And clicks on save button
     Then success messages should be displayed
     And redirected to <usermanagementscreen>
     And check if <userrole>, <status> for the <username> is updated
 
     Examples: 
-      | username | usernameupdate | userrole | status  | usermanagementscreen |
-      | ad1234   | tester12       | Admin    | Enabled | System Users         |
+      | username   | usernameupdate | userrole | status  | usermanagementscreen |
+      | Tester1889 | tester12       | Admin    | Enabled | System Users         |
 
   @CheckDeleteUser
   Scenario Outline: Verify delete user functionality
@@ -46,5 +46,5 @@ Feature: Test Add User fuctionality in User management
     And user with <username> gets delete and is not in the table
 
     Examples: 
-      | username     | popup         |
-      | hero23 | Are you Sure? |
+      | username   | popup         |
+      | Tester1889 | Are you Sure? |
