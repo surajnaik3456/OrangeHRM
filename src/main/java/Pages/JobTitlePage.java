@@ -13,10 +13,10 @@ public class JobTitlePage extends TestBase {
 	By jobTitlePage = By.xpath("//h6[@class='oxd-text oxd-text--h6 orangehrm-main-title']");
 	By addButton = By.xpath("//button[@class='oxd-button oxd-button--medium oxd-button--secondary']");
 	By addJobTitlePage = By.cssSelector("h6[class='oxd-text oxd-text--h6 orangehrm-main-title']");
-	By jobTitleField = By.xpath("(//input[@class='oxd-input oxd-input--active'])[2]");
+	By jobTitleField = By.xpath("//body/div[@id='app']/div[1]/div[2]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/input[1]");
 	By jobDescriptionField = By.xpath("//textarea[@placeholder='Type description here']");
 	By addNoteField = By.xpath("//textarea[@placeholder='Add note']");
-	By saveButton = By.cssSelector("button[type='submit']");
+	By saveButton = By.xpath("//body/div[@id='app']/div[1]/div[2]/div[2]/div[1]/div[1]/form[1]/div[5]/button[2]");
 	By editButton = By.xpath(
 			"//div[text()='Account Assistant']/parent::div/parent::div//button[@class='oxd-icon-button oxd-table-cell-action-space'][2]");
 	By dltButton = By.xpath(

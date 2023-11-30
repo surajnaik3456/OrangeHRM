@@ -39,7 +39,7 @@ public class UserManagementPage extends TestBase {
 		driver.findElement(addUserPage).isDisplayed();
 	}
 
-	public void fillAllParameters(String user_role, String status, String password, String employee_name,
+	/*public void fillAllParameters(String user_role, String status, String password, String employee_name,
 			String user_name, String confirm_password) {
 		driver.findElement(userRole).click();
 		driver.findElement(By.xpath("//span[text()='" + user_role + "']/parent::div")).click();
@@ -50,7 +50,39 @@ public class UserManagementPage extends TestBase {
 		driver.findElement(By.xpath("//span[text()='" + employee_name + "']/parent::div")).click();
 		driver.findElement(userName).sendKeys(user_name);
 		driver.findElement(ConfirmPwd).sendKeys(confirm_password);
+	}*/
+	public void userRoleSelect(String user_role)
+	{
+		driver.findElement(userRole).click();
+		driver.findElement(By.xpath("//span[text()='" + user_role + "']/parent::div")).click();
 	}
+	public void selectStatus(String status)
+	{
+		driver.findElement(statusDropdown).click();
+		driver.findElement(By.xpath("//span[text()='" + status + "']/parent::div")).click();
+	}
+	public void enterPwd(String password)
+	{
+		driver.findElement(pwd).sendKeys(password);
+	}
+	public void enterEmpName(String employee_name)
+	{
+		driver.findElement(employeeName).sendKeys(employee_name);
+		driver.findElement(By.xpath("//span[text()='" + employee_name + "']/parent::div")).click();
+	}
+	public void enterUsername(String user_name)
+	{
+		driver.findElement(userName).sendKeys(user_name);
+	}
+	public void confirmPwd(String confirm_password)
+	{
+		driver.findElement(ConfirmPwd).sendKeys(confirm_password);
+	}
+	
+	
+	
+	
+	
 
 	public void clickSave() {
 		wait.until(ExpectedConditions.elementToBeClickable(save));

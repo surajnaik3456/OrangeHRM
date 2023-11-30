@@ -17,8 +17,8 @@ Feature: Test adding job title fuctionality in User management
     And Check if title <jobTitle> and descrption got added to the table
 
     Examples: 
-      | jobTitle          | jobDescription | note                                                      |
-      | Automation Tester | .......        | I am a detail-oriented and highly analytical professional |
+      | jobTitle   | jobDescription | note                                                      |
+      | Automation | .......        | I am a detail-oriented and highly analytical professional |
 
   @CheckEditJobTitle
   Scenario Outline: Verify Editing job title functionality
@@ -28,7 +28,7 @@ Feature: Test adding job title fuctionality in User management
     When Admin clicks on job dropdown
     And selects "Job Titles" in the dropdown
     Then "Job Titles" screen is displayed
-    When Admin clicks on edit icon for job title "Chief Financial Officer"
+    When Admin clicks on edit icon for job title "Automation"
     Then "Edit Job Title" form displays
     When Admin updates <jobTitle>, <jobDescription> and <note>
     And Clicks on save button
@@ -37,7 +37,7 @@ Feature: Test adding job title fuctionality in User management
 
     Examples: 
       | jobTitle          | jobDescription                                                    | note                                |
-      | Financial Officer | A Software Tester is responsible for ensuring quality of software | I am a detail-oriented professional |
+      | Automation Tester | A Software Tester is responsible for ensuring quality of software | I am a detail-oriented professional |
 
   @CheckDeleteJobTitle
   Scenario Outline: Verify Deleting job title functionality
@@ -54,5 +54,5 @@ Feature: Test adding job title fuctionality in User management
     And user with <jobTitle> job title gets deleted and is not in the table
 
     Examples: 
-      | jobTitle        | popup         |
-      | Finance Manager | Are you Sure? |
+      | jobTitle          | popup         |
+      | Automation Tester | Are you Sure? |

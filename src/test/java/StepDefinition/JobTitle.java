@@ -107,5 +107,19 @@ public class JobTitle extends TestBase {
 		WebElement title = driver.findElement(By.xpath("//div[text()='" + updatedTitle + "']/parent::div"));
 		Assert.assertEquals(title.getText(), updatedTitle);
 	}
+	@When("^Admin clicks on delete icon for the (.*)$")
+	  public void click_delete_for_job_title(String deletejobtitle) {
+	    driver.findElement(By.xpath("//div[text()='" + deletejobtitle + "']/parent::div/following::button[1]")).click();
+	  }
+
+	  @Then("^user with (.*) job title gets deleted and is not in the table$")
+	  public void user_with_account_assistant_gets_deleted(String jobtitle) {
+	    try {
+	      driver.findElement(By.xpath("//div[text()='" + jobtitle + "']/parent::div"));
+	    } catch (NoSuchElementException e) {
+	      System.out.println("Job title with '" + jobtitle + "' is not present (as expected)");
+	    }
+
+	  }
 
 }

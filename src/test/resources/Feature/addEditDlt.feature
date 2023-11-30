@@ -14,8 +14,8 @@ Feature: Test Add User fuctionality in User management
     And user with <user_name> gets added to the list
 
     Examples: 
-      | user_role | status  | password | employee_name             | user_name  | confirm_password |
-      | ESS       | Enabled | Admin123 | AgustinaPMC Grady Sanford | Tester1889 | Admin123         |
+      | user_role | status  | password | employee_name       | user_name | confirm_password |
+      | ESS       | Enabled | Admin123 | Charlie  Carter | Tester12   | Admin123         |
 
   @CheckEditUser
   Scenario Outline: Verify edit user functionality
@@ -31,8 +31,8 @@ Feature: Test Add User fuctionality in User management
     And check if <userrole>, <status> for the <username> is updated
 
     Examples: 
-      | username   | usernameupdate | userrole | status  | usermanagementscreen |
-      | Tester1889 | tester12       | Admin    | Enabled | System Users         |
+      | username | usernameupdate | userrole | status  | usermanagementscreen |
+      | Tester12  | tester123      | Admin    | Enabled | System Users         |
 
   @CheckDeleteUser
   Scenario Outline: Verify delete user functionality
@@ -46,5 +46,5 @@ Feature: Test Add User fuctionality in User management
     And user with <username> gets delete and is not in the table
 
     Examples: 
-      | username   | popup         |
-      | Tester1889 | Are you Sure? |
+      | username | popup         |
+      | tester123  | Are you Sure? |

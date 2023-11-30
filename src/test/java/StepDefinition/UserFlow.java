@@ -36,7 +36,13 @@ public class UserFlow extends TestBase {
 	@When("^user saves with parameters for (.*), (.*), (.*), (.*), (.*) and (.*)$")
 	public void user_saves_with_parameters(String user_role, String status, String password, String employee_name,
 			String user_name, String confirm_password) {
-		userMngPg.fillAllParameters(user_role, status, password, employee_name, user_name, confirm_password);
+		userMngPg.userRoleSelect(user_role);
+		userMngPg.selectStatus(status);
+		userMngPg.enterPwd(password);
+		userMngPg.enterEmpName(employee_name);
+		userMngPg.enterUsername(user_name);
+		userMngPg.confirmPwd(confirm_password);
+
 	}
 
 	@When("Clicks on save button in add user page")
@@ -74,7 +80,8 @@ public class UserFlow extends TestBase {
 
 	@And("clicks on save button")
 	public void click_save() {
-		
+
+		userMngPg.clickSave();
 	}
 
 	@Then("success messages should be displayed")
