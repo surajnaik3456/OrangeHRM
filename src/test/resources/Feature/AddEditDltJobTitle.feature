@@ -1,5 +1,5 @@
 @AddEditDltJobTitle
-Feature: Test adding job title fuctionality in User management
+Feature: Test add, edit and deleting job title fuctionality in User management
 
   @CheckAddJobTitle
   Scenario Outline: Verify adding job title fuctionality
