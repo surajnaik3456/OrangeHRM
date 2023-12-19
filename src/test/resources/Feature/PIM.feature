@@ -17,8 +17,8 @@ Feature: Test adding and editing employee fuctionality in User management
     Then Fill the parameters for <jobtitle>, <subunit> and <employmentstatus>
     And Click on save button
     Then success message is displayed
-    And Click on "Report-to"
-    Then Report to page is displayed
+    And Click on the "Report-to"
+    Then The "Report to" page is displayed
     And Click on add button
     And Add <name> and <reportingmethod>
     When Clicks on the save button
@@ -27,8 +27,8 @@ Feature: Test adding and editing employee fuctionality in User management
     And Check if the employee with <firstname>,<middlename> and <jobtitle> is added
 
     Examples: 
-      | firstname | middlename | lastname | jobtitle                | subunit     | employmentstatus    | name             | reportingmethod |
-      | Test      | s          | naik     | Chief Executive Officer | Engineering | Full-Time Permanent | Cecil  Bonaparte | Direct          |
+      | firstname | middlename | lastname | jobtitle          | subunit     | employmentstatus    | name             | reportingmethod |
+      | Test      | s          | naik     | Account Assistant | Engineering | Full-Time Permanent | Cecil  Bonaparte | Direct          |
 
   @CheckEditEmployee
   Scenario Outline: Verify Editing added employee functionality

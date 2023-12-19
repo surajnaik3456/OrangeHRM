@@ -87,10 +87,16 @@ WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(6));
 			pimPg.empStatusSelect(employmentstatus);
 			System.out.println("hi");
 		}
-		@Then("Report to page is displayed")
-		public void report_to_page_is_displayed() {
-		    // Write code here that turns the phrase above into concrete actions
-		    throw new io.cucumber.java.PendingException();
+		@And ("Click on the {string}")
+		public void click_on_report_to(String reportTo) {
+			pimPg.reportToClick(reportTo);
+		    
+		}
+		@Then("The {string} page is displayed")
+		public void report_to_page_is_displayed(String report) {
+			WebElement reportPage = driver.findElement(By.xpath("//h6[text()='"+report+"']"));
+			Assert.assertEquals("Report to page is not displayed", reportPage.getText(), report);
+		   System.out.println("HEY");
 		}
 		@Then("Click on add button")
 		public void click_on_add_button() {

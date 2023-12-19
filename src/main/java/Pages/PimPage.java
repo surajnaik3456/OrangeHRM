@@ -2,6 +2,7 @@ package Pages;
 
 import java.time.Duration;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import TestBase.TestBase;
@@ -18,7 +19,7 @@ By lastNm = By.cssSelector("input[name='lastName']");
 By saveEmp = By.xpath("//button[@type='submit']");
 By jobTitle = By.xpath("(//div[@class='oxd-select-text-input'])[1]");
 By subUnitSelect = By.xpath("(//div[@class='oxd-select-text-input'])[3]");
-By empStatus = By.xpath("(//div[@class='oxd-select-text-input'])[3]");
+By empStatus = By.xpath("(//div[@class='oxd-select-text-input'])[5]");
 
 
 public void clickAddBtn()
@@ -47,17 +48,24 @@ public void jobClick(String job)
 }
 public void jobTitle(String jobtitle)
 {
+	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='oxd-select-text-input'])[1]")));
 	driver.findElement(jobTitle).click();
 	driver.findElement(By.xpath("//span[text()='"+jobtitle+"']/parent::div")).click();
 }
 public void subUnit(String subunit)
 {
+	//wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='oxd-select-text-input'])[3]")));
 	driver.findElement(subUnitSelect).click();
 	driver.findElement(By.xpath("//span[text()='"+subunit+"']/parent::div")).click();
 }
 public void empStatusSelect (String employmentstatus)
 {
+	//wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='oxd-select-text-input'])[5]")));
 	driver.findElement(empStatus).click();
 	driver.findElement(By.xpath("//span[text()='"+employmentstatus+"']/parent::div")).click();
+}
+public void reportToClick(String reportTo)
+{
+	driver.findElement(By.xpath("//a[text()='"+reportTo+"']//parent::div")).click();
 }
 }
