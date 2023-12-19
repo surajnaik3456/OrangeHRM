@@ -11,7 +11,7 @@ Feature: Test adding and editing employee fuctionality in User management
     And Add profile picture
     And Fills all the parameters <firstname>,<middlename> and <lastname>
     And Click on save button
-    Then "Personal Details" page is displayed
+    Then "Personal Details" page gets displayed
     And Click on "Job"
     And Job details page is displayed
     Then Fill the parameters for <jobtitle>, <subunit> and <employmentstatus>
@@ -27,8 +27,8 @@ Feature: Test adding and editing employee fuctionality in User management
     And Check if the employee with <firstname>,<middlename> and <jobtitle> is added
 
     Examples: 
-      | firstname | middlename | lastname | jobtitle          | subunit           | employmentstatus    | name             | reportingmethod |
-      | Test      | s          | naik     | Automation tester | Quality Assurance | Full-Time Permanent | Cecil  Bonaparte | Direct          |
+      | firstname | middlename | lastname | jobtitle                | subunit     | employmentstatus    | name             | reportingmethod |
+      | Test      | s          | naik     | Chief Executive Officer | Engineering | Full-Time Permanent | Cecil  Bonaparte | Direct          |
 
   @CheckEditEmployee
   Scenario Outline: Verify Editing added employee functionality

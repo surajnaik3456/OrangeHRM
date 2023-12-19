@@ -1,21 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="27.031" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="Test adding job title fuctionality in User management" name="Verify adding job title fuctionality - Example #1.1" time="26.75">
-<failure/>
+<testsuite name="Cucumber" time="42.718" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="Test adding and editing employee fuctionality in User management" name="Verify adding employee fuctionality - Example #1.1" time="42.385">
+<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()='Full-Time Permanent']/parent::div&quot;}
+  (Session info: chrome=120.0.6099.72)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9a39a69824849b8b5391299de6686421, findElement {using=xpath, value=//span[text()='Full-Time Permanent']/parent::div}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.72, chrome: {chromedriverVersion: 120.0.6099.71 (9729082fe617..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58998}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58998/devtoo..., se:cdpVersion: 120.0.6099.72, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9a39a69824849b8b5391299de6686421">
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Full-Time Permanent']/parent::div"}
+  (Session info: chrome=120.0.6099.72)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9a39a69824849b8b5391299de6686421, findElement {using=xpath, value=//span[text()='Full-Time Permanent']/parent::div}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.72, chrome: {chromedriverVersion: 120.0.6099.71 (9729082fe617..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58998}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58998/devtoo..., se:cdpVersion: 120.0.6099.72, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9a39a69824849b8b5391299de6686421
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at Pages.PimPage.empStatusSelect(PimPage.java:61)
+	at StepDefinition.PIM.fill_the_parameters_for_automation_tester_quality_assurance_and_full_time_permanent(PIM.java:87)
+	at ✽.Fill the parameters for Chief Executive Officer, Engineering and Full-Time Permanent(file:///C:/Users/User/Desktop/OrangeHRM_BDD/src/test/resources/Feature/PIM.feature:17)
+]]>
+</failure>
 <system-out><![CDATA[
 Given the user is on homepage...............................................passed
 And clicks on "PIM" in sidepanel............................................passed
-Then PIM page is displayed..................................................undefined
-When Admin clicks on Add button.............................................skipped
-Then "Add Employee" page is displayed.......................................skipped
-And Add profile picture.....................................................skipped
-And Fills all the parameters suraj,snaik....................................skipped
+Then PIM page is displayed..................................................passed
+When Admin clicks on Add button.............................................passed
+Then "Add Employee" page is displayed.......................................passed
+And Add profile picture.....................................................passed
+And Fills all the parameters Test,s and naik................................passed
 And Click on save button....................................................skipped
-Then "Personal Details" page is displayed...................................skipped
-And Fill the parameters <nickname>, <otherid>, <licensenumber>, <SSNnumber>, <SINnumber>, <nationality>, <maritalstatus>, <gender>.skipped
-And click on save button....................................................skipped
+Then "Personal Details" page gets displayed.................................passed
+And Click on "Job"..........................................................passed
+And Job details page is displayed...........................................passed
+Then Fill the parameters for Chief Executive Officer, Engineering and Full-Time Permanent.failed
 Then success message is displayed...........................................skipped
-And Check if the employee with suraj is present.............................skipped
+And Click on "Report-to"....................................................skipped
+Then Report to page is displayed............................................skipped
+And Click on add button.....................................................skipped
+And Add Cecil  Bonaparte and Direct.........................................skipped
+When Clicks on the save button..............................................skipped
+And Click on Employee list..................................................skipped
+And Check if the employee with Test,s and Chief Executive Officer is added..skipped
 ]]></system-out>
 </testcase>
 </testsuite>
