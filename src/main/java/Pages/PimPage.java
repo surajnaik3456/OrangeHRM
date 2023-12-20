@@ -48,22 +48,23 @@ public void clickSave()
 public void jobClick(String job)
 {
 	driver.findElement(By.xpath("//a[text()='"+job+"']//parent::div")).click();
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='oxd-select-text-input'])[1]")));
 }
 public void jobTitle(String jobtitle)
 {
-	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='oxd-select-text-input'])[1]")));
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='oxd-select-text-input'])[1]")));
 	driver.findElement(jobTitle).click();
 	driver.findElement(By.xpath("//span[text()='"+jobtitle+"']/parent::div")).click();
 }
 public void subUnit(String subunit)
 {
-	//wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='oxd-select-text-input'])[3]")));
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='oxd-select-text-input'])[3]")));
 	driver.findElement(subUnitSelect).click();
 	driver.findElement(By.xpath("//span[text()='"+subunit+"']/parent::div")).click();
 }
 public void empStatusSelect (String employmentstatus)
 {
-	//wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='oxd-select-text-input'])[5]")));
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='oxd-select-text-input'])[5]")));
 	driver.findElement(empStatus).click();
 	driver.findElement(By.xpath("//span[text()='"+employmentstatus+"']/parent::div")).click();
 }
