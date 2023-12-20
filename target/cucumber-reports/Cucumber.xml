@@ -1,10 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="45.97" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="Test adding and editing employee fuctionality in User management" name="Verify adding employee fuctionality - Example #1.1" time="45.65">
-<failure type="io.cucumber.java.PendingException" message="TODO: implement me">
-<![CDATA[io.cucumber.java.PendingException: TODO: implement me
-	at StepDefinition.PIM.click_on_add_button(PIM.java:104)
-	at ✽.Click on add button(file:///C:/Users/User/Desktop/OrangeHRM_BDD/src/test/resources/Feature/PIM.feature:22)
+<testsuite name="Cucumber" time="57.809" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="Test adding and editing employee fuctionality in User management" name="Verify adding employee fuctionality - Example #1.1" time="57.538">
+<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[text()='Suraj']/parent::div&quot;}
+  (Session info: chrome=120.0.6099.72)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4657435ed1c174f7b9e4f8bcab47a775, findElement {using=xpath, value=//div[text()='Suraj']/parent::div}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.72, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59705}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59705/devtoo..., se:cdpVersion: 120.0.6099.72, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4657435ed1c174f7b9e4f8bcab47a775">
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[text()='Suraj']/parent::div"}
+  (Session info: chrome=120.0.6099.72)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4657435ed1c174f7b9e4f8bcab47a775, findElement {using=xpath, value=//div[text()='Suraj']/parent::div}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.72, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59705}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59705/devtoo..., se:cdpVersion: 120.0.6099.72, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4657435ed1c174f7b9e4f8bcab47a775
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at StepDefinition.PIM.check_if_the_employee_added(PIM.java:122)
+	at ✽.Check if the employee with Suraj,s,naikand Account Assistant is added(file:///C:/Users/User/Desktop/OrangeHRM_BDD/src/test/resources/Feature/PIM.feature:27)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -14,20 +44,20 @@ Then PIM page is displayed..................................................pass
 When Admin clicks on Add button.............................................passed
 Then "Add Employee" page is displayed.......................................passed
 And Add profile picture.....................................................passed
-And Fills all the parameters Test,s and naik................................passed
+And Fills all the parameters Suraj,s and naik...............................passed
 And Click on save button....................................................passed
 Then "Personal Details" page gets displayed.................................passed
 And Click on "Job"..........................................................passed
 And Job details page is displayed...........................................passed
 Then Fill the parameters for Account Assistant, Engineering and Full-Time Permanent.passed
-Then success message is displayed...........................................skipped
+Then success message is displayed...........................................passed
 And Click on the "Report-to"................................................passed
 Then The "Report to" page is displayed......................................passed
-And Click on add button.....................................................pending
-And Add Cecil  Bonaparte and Direct.........................................skipped
-When Clicks on the save button..............................................skipped
-And Click on Employee list..................................................skipped
-And Check if the employee with Test,s and Account Assistant is added........skipped
+And Click on add button.....................................................passed
+And Add Odis  Adalwin and Direct............................................passed
+When Clicks on the save button..............................................passed
+And Click on Employee list..................................................passed
+And Check if the employee with Suraj,s,naikand Account Assistant is added...failed
 ]]></system-out>
 </testcase>
 </testsuite>

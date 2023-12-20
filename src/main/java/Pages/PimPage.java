@@ -16,11 +16,14 @@ By addBtn = By.cssSelector("i[class='oxd-icon bi-plus oxd-button-icon']");
 By firstNm = By.cssSelector("input[name='firstName']");
 By middleNm = By.cssSelector("input[name='middleName']");
 By lastNm = By.cssSelector("input[name='lastName']");
-By saveEmp = By.xpath("//button[@type='submit']");
+By save = By.xpath("//button[@type='submit']");
 By jobTitle = By.xpath("(//div[@class='oxd-select-text-input'])[1]");
 By subUnitSelect = By.xpath("(//div[@class='oxd-select-text-input'])[3]");
 By empStatus = By.xpath("(//div[@class='oxd-select-text-input'])[5]");
-
+By addBtnForSupervisor = By.xpath("(//button[@type='button'])[3]");
+By supervisorNameField = By.xpath("//input[@placeholder='Type for hints...']");
+By reportingMethodDropdown = By.cssSelector("div[class='oxd-select-text-input']");
+By employeeList = By.xpath("//a[text()='Employee List']");
 
 public void clickAddBtn()
 {
@@ -40,7 +43,7 @@ public void EnterLastName (String lastname)
 }
 public void clickSave()
 {
-	driver.findElement(saveEmp).click();
+	driver.findElement(save).click();
 }
 public void jobClick(String job)
 {
@@ -68,4 +71,25 @@ public void reportToClick(String reportTo)
 {
 	driver.findElement(By.xpath("//a[text()='"+reportTo+"']//parent::div")).click();
 }
+public void clickAddButton()
+{
+	driver.findElement(addBtnForSupervisor).click();
+}
+public void addSupervisorName(String name)
+{
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h6[text()='Add Supervisor']")));
+	driver.findElement(supervisorNameField).sendKeys(name);
+	driver.findElement(By.xpath("//span[text()='"+name+"']/parent::div")).click();
+}
+public void addReportingMethod(String reportingmethod)
+{
+	
+	driver.findElement(reportingMethodDropdown).click();
+	driver.findElement(By.xpath("//span[text()='"+reportingmethod+"']/parent::div")).click();
+}
+public void clickEmployeeList()
+{
+driver.findElement(employeeList).click();	
+}
+
 }

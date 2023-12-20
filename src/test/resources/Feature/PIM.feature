@@ -24,11 +24,11 @@ Feature: Test adding and editing employee fuctionality in User management
     When Clicks on the save button
     Then success message is displayed
     And Click on Employee list
-    And Check if the employee with <firstname>,<middlename> and <jobtitle> is added
+    And Check if the employee with <firstname>,<middlename>,<lastname>and <jobtitle> is added
 
     Examples: 
-      | firstname | middlename | lastname | jobtitle          | subunit     | employmentstatus    | name             | reportingmethod |
-      | Test      | s          | naik     | Account Assistant | Engineering | Full-Time Permanent | Cecil  Bonaparte | Direct          |
+      | firstname | middlename | lastname | jobtitle          | subunit     | employmentstatus    | name          | reportingmethod |
+      | Suraj    | s          | naik        | Account Assistant | Engineering | Full-Time Permanent | Odis  Adalwin | Direct          |
 
   @CheckEditEmployee
   Scenario Outline: Verify Editing added employee functionality

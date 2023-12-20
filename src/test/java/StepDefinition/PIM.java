@@ -100,28 +100,35 @@ WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(6));
 		}
 		@Then("Click on add button")
 		public void click_on_add_button() {
-		    // Write code here that turns the phrase above into concrete actions
-		    throw new io.cucumber.java.PendingException();
+		   pimPg.clickAddButton();
 		}
-		@Then("Add Cecil  Bonaparte and Direct")
-		public void add_cecil_bonaparte_and_direct() {
-		    // Write code here that turns the phrase above into concrete actions
-		    throw new io.cucumber.java.PendingException();
+		@Then("^Add (.*) and (.*)$")
+		public void add_supervisor_name_and_method(String name, String reportingMethod) {
+		    pimPg.addSupervisorName(name);
+		    pimPg.addReportingMethod(reportingMethod);
+		    
 		}
 		@When("Clicks on the save button")
 		public void clicks_on_the_save_button() {
-		    // Write code here that turns the phrase above into concrete actions
-		    throw new io.cucumber.java.PendingException();
+			pimPg.clickSave();
 		}
 		@Then("Click on Employee list")
 		public void click_on_employee_list() {
-		    // Write code here that turns the phrase above into concrete actions
-		    throw new io.cucumber.java.PendingException();
+		    pimPg.clickEmployeeList();
 		}
-		@Then("Check if the employee with Test,s and Automation tester is added")
-		public void check_if_the_employee_with_test_s_and_automation_tester_is_added() {
-		    // Write code here that turns the phrase above into concrete actions
-		    throw new io.cucumber.java.PendingException();
+		@And("^Check if the employee with (.*),(.*),(.*)and (.*) is added$")
+		public void check_if_the_employee_added(String firstname,String middlename,String lastname,String jobtitle) 
+		{
+		   WebElement firstName = driver.findElement(By.xpath("//div[text()='"+firstname+"']/parent::div"));
+		   WebElement middleName = driver.findElement(By.xpath("//div[text()='"+middlename+"']/parent::div"));
+		   WebElement lastName = driver.findElement(By.xpath("//div[text()='"+lastname+"']/parent::div"));
+		   WebElement jobTitle = driver.findElement(By.xpath("//div[text()='"+jobtitle+"']/parent::div"));
+		 
+		   Assert.assertEquals("Employee with first name"+firstname+"is not added", firstName.getText(), firstname);
+		   Assert.assertEquals("Employee with middle name"+middlename+"is not added", middleName.getText(), middlename);
+		   Assert.assertEquals("Employee with first name"+lastname+"is not added", lastName.getText(), lastname);
+		   Assert.assertEquals("Employee with first name"+jobtitle+"is not added", jobTitle.getText(), jobtitle);
+		   System.out.println("Employee is added successfully");
 		}
 
 
