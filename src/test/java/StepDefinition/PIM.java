@@ -85,6 +85,7 @@ public class PIM extends TestBase {
 	public void job_details_page_is_displayed() {
 		WebElement jobDetailsPage = driver.findElement(By.xpath("//h6[text()='Job Details']"));
 		Assert.assertEquals("Job details page is not displayed", jobDetailsPage.getText(), "Job Details");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='oxd-select-text-input'])[1]")));
 	}
 
 	@Then("^Fill the parameters for (.*), (.*) and (.*)$")
@@ -135,7 +136,7 @@ public class PIM extends TestBase {
 		WebElement lastName = driver.findElement(By.xpath("//div[text()='" + lastname + "']/parent::div"));
 		WebElement jobTitle = driver.findElement(By.xpath("//div[text()='" + jobtitle + "']/parent::div"));
 		while (!firstMiddleName.getText().equals(firstAndMiddleName) && lastName.getText().equals(lastname)) {
-			driver.findElement(By.xpath("//i[@class='oxd-icon bi-chevron-right']")).click();
+			driver.findElement(By.xpath("//button[@type='button' and @class='oxd-pagination-page-item oxd-pagination-page-item--previous-next']")).click();
 		}
 		Assert.assertEquals("Employee with first name" + firstAndMiddleName + "is not added", firstMiddleName.getText(), firstAndMiddleName);
 		Assert.assertEquals("Employee with first name" + lastname + "is not added", lastName.getText(), lastname);
@@ -158,6 +159,7 @@ public class PIM extends TestBase {
 
 	@Then("^update (.*), (.*) and (.*)$")
 	public void update_name_and_last_name(String firstName, String middleName, String lastName) throws InterruptedException {
+		
 		pimPg.updateFirstNm(firstName);
 		pimPg.updateMiddleNm(middleName);
 		pimPg.updateLastNm(lastName);
@@ -173,17 +175,17 @@ public class PIM extends TestBase {
 		pimPg.updateJobTitle(jobtitle);   
 		pimPg.updateSubUnit(subunit);
 	}
-	@Then("^Check if the employee with (.*),(.*)and (.*) is updated$")
-	public void check_if_the_employee_details_updated(String firstAndMiddleName, String lastname, String jobtitle) {
-		WebElement firstMiddleName = driver.findElement(By.xpath("//div[text()='" + firstAndMiddleName + "']/parent::div"));
-		WebElement lastName = driver.findElement(By.xpath("//div[text()='" +lastname+ "']/parent::div"));
+	@Then("^Check if the employee with (.*),(.*) and (.*) is updated$")
+	public void check_if_the_employee_details_updated(String firstAndMiddleName, String lastName, String jobtitle) {
+		WebElement updatedFirstMiddleName = driver.findElement(By.xpath("//div[text()='" + firstAndMiddleName + "']/parent::div"));
+		WebElement updatedLastName = driver.findElement(By.xpath("//div[text()='" + lastName + "']/parent::div"));
 		WebElement jobTitle = driver.findElement(By.xpath("//div[text()='" + jobtitle + "']/parent::div"));
-		while (!firstMiddleName.getText().equals(firstAndMiddleName) && lastName.getText().equals(lastname)) {
-			driver.findElement(By.xpath("//i[@class='oxd-icon bi-chevron-right']")).click();
+		while (!updatedFirstMiddleName.getText().equalsIgnoreCase(firstAndMiddleName) && updatedLastName.getText().equalsIgnoreCase(lastName)) {
+			driver.findElement(By.xpath("//button[@type='button' and @class='oxd-pagination-page-item oxd-pagination-page-item--previous-next']")).click();
 		}
-		Assert.assertEquals("Employee with first name" + firstAndMiddleName + "is not added", firstMiddleName.getText(), firstAndMiddleName);
-		Assert.assertEquals("Employee with first name" + lastname + "is not added", lastName.getText(), lastname);
+		Assert.assertEquals("Employee with first name" + firstAndMiddleName + "is not added", updatedFirstMiddleName.getText(), firstAndMiddleName);
+		Assert.assertEquals("Employee with first name" + lastName + "is not added", updatedLastName.getText(), lastName);
 		Assert.assertEquals("Employee with first name" + jobtitle + "is not added", jobTitle.getText(), jobtitle);
-		System.out.println("Employee is updated successfully");
+		System.out.println("Employee is added successfully");
 	}
 }

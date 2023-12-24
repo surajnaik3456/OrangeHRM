@@ -34,7 +34,7 @@ Feature: Test adding and editing employee fuctionality in User management
 
   @CheckEditEmployeeName
   Scenario Outline: Verify Editing added employee functionality
-    When Admin clicks on edit for the employee with first and middle name "Surajboi S"
+    When Admin clicks on edit for the employee with first and middle name "Linda Jane"
     Then "Personal Details" page is displayed
     And update <firstName>, <middleName> and <lastName>
     And Admin clicks on save button
@@ -49,4 +49,4 @@ Feature: Test adding and editing employee fuctionality in User management
 
     Examples: 
       | firstName | middleName | lastName | jobtitle           | subunit        | firstAndMiddleName |
-      | Tester    | hii        | heyi     | Content Specialist | Administration | Teste hi           |
+      | Test1235  | hey        | heyi     | Content Specialist | Administration | Test1235 hey       |
