@@ -1,11 +1,13 @@
 @AddEditEmployee
 Feature: Test adding and editing employee fuctionality in User management
 
-  @CheckAddEmployee
-  Scenario Outline: Verify adding employee fuctionality
+  Background: 
     Given the user is on homepage
     And clicks on "PIM" in sidepanel
     Then PIM page is displayed
+
+  @CheckAddEmployee
+  Scenario Outline: Verify adding employee fuctionality
     When Admin clicks on Add button
     Then "Add Employee" page is displayed
     And Add profile picture
@@ -27,27 +29,24 @@ Feature: Test adding and editing employee fuctionality in User management
     And Check if the employee with <firstAndMiddleName>,<lastname>and <jobtitle> is added
 
     Examples: 
-      | firstname | middlename | lastname | jobtitle          | subunit     | employmentstatus    | name          | reportingmethod | firstAndMiddleName |
-      | Suraj     | S          | Naik     | Account Assistant | Engineering | Full-Time Permanent | Odis  Adalwin | Direct          | Suraj S            |
+      | firstname | middlename | lastname | jobtitle                | subunit     | employmentstatus    | name           | reportingmethod | firstAndMiddleName |
+      | Surajboi  | S          | Naik     | Chief Technical Officer | Engineering | Full-Time Permanent | Dominic  Chase | Direct          | Surajboi S         |
 
-  @CheckEditEmployee
+  @CheckEditEmployeeName
   Scenario Outline: Verify Editing added employee functionality
-    Given the user is on homepage
-    And clicks on "PIM" in sidepanel
-    Then PIM page is displayed
-    When Admin clicks on edit icon for the employee with first name "Test"
+    When Admin clicks on edit for the employee with first and middle name "Surajboi S"
     Then "Personal Details" page is displayed
-    And Update the <middlename> and <lastname>
-    And Click on save botton
+    And update <firstName>, <middleName> and <lastName>
+    And Admin clicks on save button
     Then success message is displayed
     And Click on "Job"
     And Job details page is displayed
     Then Update <jobtitle>and<subunit>
-    When Clicks on the save button
+    And Click on save button
     Then success message is displayed
     And Click on Employee list
-    And Check if the employee with updated <middlename>,<lastname> and <jobtitle> is present
+    And Check if the employee with <firstAndMiddleName>,<lastName> and <jobtitle> is updated
 
     Examples: 
-      | middlename | lastname | jobtitle   | subunit |
-      |         21 | nk       | IT Manager | TechOps |
+      | firstName | middleName | lastName | jobtitle           | subunit        | firstAndMiddleName |
+      | Tester    | hii        | heyi     | Content Specialist | Administration | Teste hi           |

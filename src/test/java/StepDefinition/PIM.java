@@ -142,5 +142,48 @@ public class PIM extends TestBase {
 		Assert.assertEquals("Employee with first name" + jobtitle + "is not added", jobTitle.getText(), jobtitle);
 		System.out.println("Employee is added successfully");
 	}
+	
+	@When("Admin clicks on edit for the employee with first and middle name {string}")
+	public void clickEdit(String name)
+	{
+		WebElement firstAndMiddleName = driver.findElement(By.xpath("//div[text()='"+ name +"']/parent::div"));
+		while(!firstAndMiddleName.getText().equalsIgnoreCase(name))
+		{
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//i[@class='oxd-icon bi-chevron-right']")));
+			driver.findElement(By.xpath("//i[@class='oxd-icon bi-chevron-right']")).click();
+		}
+		pimPg.clickEdit(name);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//h6[text()='Personal Details']")));
+	}
 
+	@Then("^update (.*), (.*) and (.*)$")
+	public void update_name_and_last_name(String firstName, String middleName, String lastName) throws InterruptedException {
+		pimPg.updateFirstNm(firstName);
+		pimPg.updateMiddleNm(middleName);
+		pimPg.updateLastNm(lastName);
+		Thread.sleep(3000);
+	}
+	@And ("Admin clicks on save button")
+	public void ClickSaveBtn()
+	{
+		driver.findElement(By.xpath("(//button[@type='submit'])[1]")).click();
+	}
+	@Then("^Update (.*)and(.*)$")
+	public void update_it_managerand_tech_ops(String jobtitle, String subunit) {
+		pimPg.updateJobTitle(jobtitle);   
+		pimPg.updateSubUnit(subunit);
+	}
+	@Then("^Check if the employee with (.*),(.*)and (.*) is updated$")
+	public void check_if_the_employee_details_updated(String firstAndMiddleName, String lastname, String jobtitle) {
+		WebElement firstMiddleName = driver.findElement(By.xpath("//div[text()='" + firstAndMiddleName + "']/parent::div"));
+		WebElement lastName = driver.findElement(By.xpath("//div[text()='" +lastname+ "']/parent::div"));
+		WebElement jobTitle = driver.findElement(By.xpath("//div[text()='" + jobtitle + "']/parent::div"));
+		while (!firstMiddleName.getText().equals(firstAndMiddleName) && lastName.getText().equals(lastname)) {
+			driver.findElement(By.xpath("//i[@class='oxd-icon bi-chevron-right']")).click();
+		}
+		Assert.assertEquals("Employee with first name" + firstAndMiddleName + "is not added", firstMiddleName.getText(), firstAndMiddleName);
+		Assert.assertEquals("Employee with first name" + lastname + "is not added", lastName.getText(), lastname);
+		Assert.assertEquals("Employee with first name" + jobtitle + "is not added", jobTitle.getText(), jobtitle);
+		System.out.println("Employee is updated successfully");
+	}
 }
