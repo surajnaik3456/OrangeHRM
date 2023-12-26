@@ -7,7 +7,7 @@ Feature: Test adding report functionality in user management
     Then PIM page is displayed
     
   @AddNewReports
-  Scenario: Verify add report functionality
+  Scenario Outline: Verify add report functionality
     When Admin clicks on Reports in top bar
     Then "Employee Reports" page is displayed 
     And Click on add button
@@ -21,4 +21,5 @@ Feature: Test adding report functionality in user management
     And Report is generated 
 
  Examples:
- |employeeDetails|selectionCriteria|include|displayFieldGroup
+ |employeeDetails|selectionCriteria|include|displayFieldGroup|
+ |Employee Details Report|Employee Name|Current Employees Only|Personal|
