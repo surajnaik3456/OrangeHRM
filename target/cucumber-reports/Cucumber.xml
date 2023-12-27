@@ -1,21 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="34.979" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Test adding and editing employee fuctionality in User management" name="Verify Editing added employee functionality - Example #1.1" time="34.741">
+<testsuite name="Cucumber" time="35.763" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="Test adding report functionality in user management" name="Verify add report functionality - Example #1.1" time="35.449">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: //*[text()='Success'] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.129, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60844}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60844/devtoo..., se:cdpVersion: 120.0.6099.129, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0f2226edbb5646bd539e5081dda23234">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[text()='Success'] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.129, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60844}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60844/devtoo..., se:cdpVersion: 120.0.6099.129, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0f2226edbb5646bd539e5081dda23234
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at Pages.UserManagementPage.successMsg(UserManagementPage.java:101)
+	at StepDefinition.UserFlow.success_message(UserFlow.java:55)
+	at ✽.success message is displayed(file:///C:/Users/User/Desktop/OrangeHRM_BDD/src/test/resources/Feature/reports.feature:20)
+]]>
+</failure>
 <system-out><![CDATA[
 Given the user is on homepage...............................................passed
 And clicks on "PIM" in sidepanel............................................passed
 Then PIM page is displayed..................................................passed
-When Admin clicks on edit for the employee with first and middle name "Linda Jane".passed
-Then "Personal Details" page is displayed...................................passed
-And update Test1235, hey and heyi...........................................passed
-And Admin clicks on save button.............................................passed
-Then success message is displayed...........................................passed
-And Click on "Job"..........................................................passed
-And Job details page is displayed...........................................passed
-Then Update Content SpecialistandAdministration.............................passed
+When Admin clicks on Reports in top bar.....................................passed
+Then "Employee Reports" page is been displayed..............................passed
+And Click on add button in reports page.....................................passed
+Then "Add Report" page is displayed successfully............................passed
+And Fill all the parameters Employee Details Report,Employee Name,Current Employees Only and Personal.passed
+And Add <displayField>......................................................passed
+Then Click on plus icon.....................................................passed
+And Click on include header toggle button...................................passed
 And Click on save button....................................................passed
-And Click on Employee list..................................................passed
-And Check if the employee with Test1235 hey,heyi and Content Specialist is updated.passed
+Then success message is displayed...........................................failed
+And Report is generated for <employeeDetails>...............................skipped
 ]]></system-out>
 </testcase>
 </testsuite>

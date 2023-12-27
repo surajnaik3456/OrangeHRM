@@ -138,9 +138,9 @@ public class PIM extends TestBase {
 		while (!firstMiddleName.getText().equals(firstAndMiddleName) && lastName.getText().equals(lastname)) {
 			driver.findElement(By.xpath("//button[@type='button' and @class='oxd-pagination-page-item oxd-pagination-page-item--previous-next']")).click();
 		}
-		Assert.assertEquals("Employee with first name" + firstAndMiddleName + "is not added", firstMiddleName.getText(), firstAndMiddleName);
-		Assert.assertEquals("Employee with first name" + lastname + "is not added", lastName.getText(), lastname);
-		Assert.assertEquals("Employee with first name" + jobtitle + "is not added", jobTitle.getText(), jobtitle);
+		Assert.assertEquals("Employee with first name" + firstAndMiddleName + "is added", firstMiddleName.getText(), firstAndMiddleName);
+		Assert.assertEquals("Employee with first name" + lastname + "is added", lastName.getText(), lastname);
+		Assert.assertEquals("Employee with first name" + jobtitle + "is added", jobTitle.getText(), jobtitle);
 		System.out.println("Employee is added successfully");
 	}
 	
@@ -183,9 +183,9 @@ public class PIM extends TestBase {
 		while (!updatedFirstMiddleName.getText().equalsIgnoreCase(firstAndMiddleName) && updatedLastName.getText().equalsIgnoreCase(lastName)) {
 			driver.findElement(By.xpath("//button[@type='button' and @class='oxd-pagination-page-item oxd-pagination-page-item--previous-next']")).click();
 		}
-		Assert.assertEquals("Employee with first name" + firstAndMiddleName + "is not added", updatedFirstMiddleName.getText(), firstAndMiddleName);
-		Assert.assertEquals("Employee with first name" + lastName + "is not added", updatedLastName.getText(), lastName);
-		Assert.assertEquals("Employee with first name" + jobtitle + "is not added", jobTitle.getText(), jobtitle);
-		System.out.println("Employee is added successfully");
+		Assert.assertEquals("Employee with first name" + firstAndMiddleName + "is updated", updatedFirstMiddleName.getText(), firstAndMiddleName);
+		Assert.assertEquals("Employee with first name" + lastName + "is updated", updatedLastName.getText(), lastName);
+		Assert.assertEquals("Employee with first name" + jobtitle + "is updated", jobTitle.getText(), jobtitle);
+		System.out.println("Employee details are updated successfully");
 	}
 }
