@@ -13,12 +13,16 @@ Feature: Test adding report functionality in user management
     And Click on add button in reports page
     Then "Add Report" page is displayed successfully
     And Fill all the parameters <reportName>,<selectionCriteria>,<include> and <displayFieldGroup>
-    And Add display fields <displayField>, <displayField2> and <displayField3> to be displayed in reports
+    And Admin adds first display field <displayField1> to be displayed in reports
+    And Admin adds second display field <displayField2> to be displayed in reports
+    And Admin adds second display field <displayField3> to be displayed in reports
     Then Click on plus icon
     And Click on include header toggle button
-    And Click on save button
+    And Admin clicks on save button for reports
     Then success message is displayed
-    And Report is generated for <employeeDetails>
+    And Report is generated for <reportName>
+    When Admin clicks on Reports in top bar
+    Then check report with <reportName> is added
 
     Examples: 
       | reportName              | selectionCriteria | include                | displayFieldGroup | displayField1 | displayField2      | displayField3 |
