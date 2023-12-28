@@ -3,6 +3,8 @@ package Pages;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import TestBase.TestBase;
@@ -18,8 +20,9 @@ public class ReportsPage extends TestBase {
 	By includeField = By.xpath("(//div[@class='oxd-select-text-input'])[2]");
 	By selectDisplayFieldGroup = By.xpath("(//div[@class='oxd-select-text-input'])[3]");
 	By selectDisplayField = By.xpath("(//div[@class='oxd-select-text-input'])[4]");
-	By selectDisplayFieldPlusIcon =By.xpath("(//i[@class='oxd-icon bi-plus'])[2])");
-	By includeHeaderToggle = By.xpath("//input[@type='checkbox']");
+	By selectDisplayFieldPlusIcon =By.xpath("(//i[@class='oxd-icon bi-plus'])[2]");
+	By includeHeaderToggle = By.xpath("//input[@type='checkbox']/following::span");
+	By SaveBtn = By.xpath("//button[@type='submit' and @class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']");
 	
 public void clickReports()
 {
@@ -53,6 +56,33 @@ public void selectDisplayFld(String displayField1)
 	driver.findElement(selectDisplayField).click();
 	driver.findElement(By.xpath("//span[text()='"+displayField1+"']/parent::div")).click();
 	driver.findElement(selectDisplayFieldPlusIcon).click();
+}
+public void selectDisplayFld2(String displayField2)
+{
+	driver.findElement(selectDisplayField).click();
+	driver.findElement(By.xpath("//span[text()='"+displayField2+"']/parent::div")).click();
+	driver.findElement(selectDisplayFieldPlusIcon).click();
+}
+public void selectDisplayFld3(String displayField3)
+{
+	driver.findElement(selectDisplayField).click();
+	driver.findElement(By.xpath("//span[text()='"+displayField3+"']/parent::div")).click();
+}
+public void clickPlusBtn()
+{
+	driver.findElement(selectDisplayFieldPlusIcon).click();
+}
+public void clickToggle()
+{
+	wait.until(ExpectedConditions.visibilityOfElementLocated(includeHeaderToggle));
 	driver.findElement(includeHeaderToggle).click();
+}
+public void clickSvBtn()
+{
+	JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+    jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+    
+	wait.until(ExpectedConditions.elementToBeClickable(SaveBtn));
+	driver.findElement(SaveBtn).click();
 }
 }
