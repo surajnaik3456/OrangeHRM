@@ -1,24 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="33.477" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Test adding report functionality in user management" name="Verify add report functionality - Example #1.1" time="33.152">
+<testsuite name="Cucumber" time="28.356" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Test paygrades functionality in user management" name="Verify adding pay grades fuctionality - Example #1.1" time="28.104">
 <system-out><![CDATA[
 Given the user is on homepage...............................................passed
-And clicks on "PIM" in sidepanel............................................passed
-Then PIM page is displayed..................................................passed
-When Admin clicks on Reports in top bar.....................................passed
-Then "Employee Reports" page is been displayed..............................passed
-And Click on add button in reports page.....................................passed
-Then "Add Report" page is displayed successfully............................passed
-And Fill all the parameters Employee Details Report,Employee Name,Current Employees Only and Personal.passed
-And Admin adds first display field Employee Id to be displayed in reports...passed
-And Admin adds second display field Employee Last Name to be displayed in reports.passed
-And Admin adds second display field Gender to be displayed in reports.......passed
-Then Click on plus icon.....................................................passed
-And Click on include header toggle button...................................passed
-And Admin clicks on save button for reports.................................passed
-Then success message is displayed...........................................passed
-And Report is generated for Employee Details Report.........................passed
-Then check report with Employee Details Report is added.....................passed
+And clicks on "Admin" in sidepanel..........................................passed
+Then User Management section is displayed...................................passed
+When Admin clicks on job dropdown...........................................passed
+And selects "Pay Grades" in the dropdown....................................passed
+Then "Pay Grades" screen is displayed.......................................passed
+When Admin clicks on Add button.............................................passed
+Then "Add Pay Grade" page is displayed......................................passed
+And Admin enters Hey........................................................passed
+And Clicks on save button...................................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

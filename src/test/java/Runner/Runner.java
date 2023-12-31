@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/Feature", 
                  glue = { "StepDefinition","Hooks" },
-                 tags = "@AddNewReports", 
+                 tags = "@AddPayGrades", 
                  monochrome = true, 
                  dryRun = false,
                  plugin = {
