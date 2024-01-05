@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="28.356" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Test paygrades functionality in user management" name="Verify adding pay grades fuctionality - Example #1.1" time="28.104">
+<testsuite name="Cucumber" time="34.998" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Test paygrades functionality in user management" name="Verify adding pay grades and currency fuctionality - Example #1.1" time="34.709">
 <system-out><![CDATA[
 Given the user is on homepage...............................................passed
 And clicks on "Admin" in sidepanel..........................................passed
@@ -10,8 +10,16 @@ And selects "Pay Grades" in the dropdown....................................pass
 Then "Pay Grades" screen is displayed.......................................passed
 When Admin clicks on Add button.............................................passed
 Then "Add Pay Grade" page is displayed......................................passed
-And Admin enters Hey........................................................passed
+And Admin enters Grade 12...................................................passed
 And Clicks on save button...................................................passed
+And The "Edit Pay Grade" page is displayed successfully.....................passed
+Then "Add Currency" section shows up........................................passed
+And Admin adds parameters in add currency section INR - Indian Rupee,10000.00 and 25000.00.passed
+And Clicks on save button for add currency..................................passed
+Then success message is displayed...........................................passed
+And currency created with parameters Indian Rupee, 10000.00 and 25000.00 are added to the table.passed
+When Admin clicks on cancel button..........................................passed
+Then Added paygrade with Grade 12 and Indian Rupee gets listed in pay grade table.passed
 ]]></system-out>
 </testcase>
 </testsuite>

@@ -13,7 +13,7 @@ public class TestBase {
 	public void browserLaunch()
 	{
 		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
 		driver.get("https://opensource-demo.orangehrmlive.com");	
 	}

@@ -23,6 +23,7 @@ public class ReportsPage extends TestBase {
 	By selectDisplayFieldPlusIcon =By.xpath("(//i[@class='oxd-icon bi-plus'])[2]");
 	By includeHeaderToggle = By.xpath("//input[@type='checkbox']/following::span");
 	By SaveBtn = By.xpath("//button[@type='submit' and @class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']");
+
 	
 public void clickReports()
 {
