@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="34.998" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Test paygrades functionality in user management" name="Verify adding pay grades and currency fuctionality - Example #1.1" time="34.709">
+<testsuite name="Cucumber" time="30.625" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="Test paygrades functionality in user management" name="Verify adding pay grades and currency fuctionality - Example #1.1" time="30.4">
+<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//h6[text()='Edit Pay Grade']&quot;}
+  (Session info: chrome=121.0.6167.161)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ee09a7c4413c23d58bdd1723e370f383, findElement {using=xpath, value=//h6[text()='Edit Pay Grade']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.161, chrome: {chromedriverVersion: 121.0.6167.85 (3f98d690ad7e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49652}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49652/devtoo..., se:cdpVersion: 121.0.6167.161, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ee09a7c4413c23d58bdd1723e370f383">
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h6[text()='Edit Pay Grade']"}
+  (Session info: chrome=121.0.6167.161)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ee09a7c4413c23d58bdd1723e370f383, findElement {using=xpath, value=//h6[text()='Edit Pay Grade']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.161, chrome: {chromedriverVersion: 121.0.6167.85 (3f98d690ad7e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49652}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49652/devtoo..., se:cdpVersion: 121.0.6167.161, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ee09a7c4413c23d58bdd1723e370f383
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at StepDefinition.PayGrade.editPayGradePg(PayGrade.java:28)
+	at ✽.The "Edit Pay Grade" page is displayed successfully(file:///C:/Users/User/Desktop/OrangeHRM_BDD/src/test/resources/Feature/paygrade.feature:17)
+]]>
+</failure>
 <system-out><![CDATA[
 Given the user is on homepage...............................................passed
 And clicks on "Admin" in sidepanel..........................................passed
@@ -8,18 +44,18 @@ Then User Management section is displayed...................................pass
 When Admin clicks on job dropdown...........................................passed
 And selects "Pay Grades" in the dropdown....................................passed
 Then "Pay Grades" screen is displayed.......................................passed
-When Admin clicks on Add button.............................................passed
+When Admin clicks on Add button.............................................skipped
 Then "Add Pay Grade" page is displayed......................................passed
-And Admin enters Grade 12...................................................passed
+And Admin enters Grade 15...................................................passed
 And Clicks on save button...................................................passed
-And The "Edit Pay Grade" page is displayed successfully.....................passed
-Then "Add Currency" section shows up........................................passed
-And Admin adds parameters in add currency section INR - Indian Rupee,10000.00 and 25000.00.passed
-And Clicks on save button for add currency..................................passed
-Then success message is displayed...........................................passed
-And currency created with parameters Indian Rupee, 10000.00 and 25000.00 are added to the table.passed
-When Admin clicks on cancel button..........................................passed
-Then Added paygrade with Grade 12 and Indian Rupee gets listed in pay grade table.passed
+And The "Edit Pay Grade" page is displayed successfully.....................failed
+Then "Add Currency" section shows up........................................skipped
+And Admin adds parameters in add currency section INR - Indian Rupee,10000.00 and 25000.00.skipped
+And Clicks on save button for add currency..................................skipped
+Then success message is displayed...........................................skipped
+And currency created with parameters Indian Rupee, 10000.00 and 25000.00 are added to the table.skipped
+When Admin clicks on cancel button..........................................skipped
+Then Added paygrade with Grade 15 and Indian Rupee gets listed in pay grade table.skipped
 ]]></system-out>
 </testcase>
 </testsuite>

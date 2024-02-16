@@ -1,5 +1,11 @@
-Hooks\Hooks.class
+StepDefinition\JobTitle.class
+StepDefinition\PIM.class
+StepDefinition\DropDown.class
 StepDefinition\SearchInSidePanel.class
-Runner\Runner.class
+StepDefinition\PayGrade.class
 StepDefinition\UserManagement.class
 StepDefinition\Login.class
+Hooks\Hooks.class
+StepDefinition\Reports.class
+Runner\Runner.class
+StepDefinition\UserFlow.class
